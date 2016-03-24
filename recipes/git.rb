@@ -40,5 +40,4 @@ when "debian", "ubuntu", "centos", "redhat"
   link "/usr/bin/drush" do
     to "#{node['drush']['install_dir']}/drush"
   end
-
 end

@@ -17,19 +17,16 @@
 # limitations under the License.
 #
 
-# Options: pear, git
-default['drush']['install_method'] = "pear"
+# Options: git
+default['drush']['install_method'] = "git"
 
 # Used for drush install via git and make install (PEAR stores here by default).
 default['drush']['install_dir'] = "/usr/share/php/drush"
 
-# When installing via PEAR, this is the preferred state (stable, beta, devel)
-# or a specific x.y.z pear version (eg. 4.5.0).  When installing via Git,
-# this is a commit/tag/branch reference (eg. 6e4c1e22f0b / 7.x-4.5 / 7.x-4.x)
-default['drush']['version'] = "stable"
-
-# URL of allreleases.xml for pear to install from preferred states
-default['drush']['allreleases'] = "http://pear.drush.org/rest/r/drush/allreleases.xml"
+# When installing this is the preferred state version (eg. 4.5.0). When
+# installing via Git, this is a commit/tag/branch reference
+# (eg. 6e4c1e22f0b / 8.0.3 / 8.x)
+default['drush']['version'] = "8.x"
 
 # Version number (without drupal major version) from
 # http://drupal.org/project/drush_make
