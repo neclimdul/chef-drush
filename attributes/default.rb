@@ -1,4 +1,4 @@
-# 
+#
 # Author:: David King <dking@xforty.com>
 # Contributor:: Patrick Connolly <patrick@myplanetdigital.com>
 # Cookbook Name:: drush
@@ -18,12 +18,12 @@
 #
 
 # Options: git
-default['drush']['install_method'] = "git"
+default['drush']['install_method'] = 'git'
 
 # Used for drush install via git and make install (PEAR stores here by default).
-default['drush']['install_dir'] = "/usr/share/php/drush"
+default['drush']['install_dir'] = '/usr/share/php/drush'
 
 # When installing this is the preferred state version (eg. 4.5.0). When
 # installing via Git, this is a commit/tag/branch reference
 # (eg. 6e4c1e22f0b / 8.0.3 / 8.x)
-default['drush']['version'] = "8.x"
+default['drush']['version'] = '8.x'

@@ -1,4 +1,4 @@
-# 
+#
 # Author:: Mark Sonnabaum <mark.sonnabaum@acquia.com>
 # Author:: Patrick Connolly <patrick@myplanetdigital.com>
 # Cookbook Name:: drush
@@ -17,5 +17,5 @@
 # limitations under the License.
 #
 
-include_recipe "php"
+include_recipe 'php'
 include_recipe "drush::#{node['drush']['install_method']}"

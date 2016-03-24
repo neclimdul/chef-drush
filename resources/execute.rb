@@ -19,6 +19,6 @@
 default_action :run
 actions :run
 
-attribute :command, :kind_of => String, :name_attribute => true
-attribute :cwd, :kind_of => String
-attribute :options, :kind_of => Array, :default => []
+attribute :command, kind_of: String, name_attribute: true
+attribute :cwd, kind_of: String
+attribute :options, kind_of: Array, default: []
