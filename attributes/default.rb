@@ -28,9 +28,5 @@ default['drush']['install_dir'] = "/usr/share/php/drush"
 # (eg. 6e4c1e22f0b / 8.0.3 / 8.x)
 default['drush']['version'] = "8.x"
 
-# Version number (without drupal major version) from
-# http://drupal.org/project/drush_make
-default['drush']['make']['version'] = "2.3"
-
 # The console table recipe fails if a newer version is already installed.
 default['drush']['console_table']['version'] = "1.1.6"
