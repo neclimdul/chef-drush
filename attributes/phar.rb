@@ -16,4 +16,5 @@
 # limitations under the License.
 #
 
+default['drush']['version'] = '8.0.5'
 default['drush']['phar']['url'] = "https://github.com/drush-ops/drush/releases/download/#{node['drush']['version']}/drush.phar"

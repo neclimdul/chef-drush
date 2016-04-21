@@ -57,4 +57,3 @@ suites:
     attributes:
       drush:
         install_method: 'phar'
-        version: '8.0.0'
