@@ -12,7 +12,8 @@ platforms:
   - name: ubuntu-12.04
     run_list:
       - recipe[apt]
-  - name: centos-6.4
+  - name: centos-6.7
+  - name: centos-7.2
 
 suites:
   - name: default
@@ -26,14 +27,34 @@ suites:
     attributes:
       drush:
         install_method: 'git'
-        version: '6.x'
+        version: 'master'
   - name: git-7
     run_list:
       - recipe[git]
       - recipe[drush::default]
     # These don't have php 5.4 and will fail.
-    excludes: ['ubuntu-12.04', 'centos-6.4']
+    excludes: ['ubuntu-12.04', 'centos-6.7']
     attributes:
       drush:
         install_method: 'git'
-        version: 'master'
+        version: '7.x'
+  - name: git-8
+    run_list:
+      - recipe[git]
+      - recipe[drush::default]
+    # These don't have php 5.4 and will fail.
+    excludes: ['ubuntu-12.04', 'centos-6.7']
+    attributes:
+      drush:
+        install_method: 'git'
+        version: '8.x'
+  - name: phar-8
+    run_list:
+      - recipe[git]
+      - recipe[drush::default]
+    # These don't have php 5.4 and will fail.
+    excludes: ['ubuntu-12.04', 'centos-6.7']
+    attributes:
+      drush:
+        install_method: 'phar'
+        version: '8.0.0'
