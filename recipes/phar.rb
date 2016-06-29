@@ -28,7 +28,7 @@ directory node['drush']['install_dir'] do
   recursive true
 end
 
-file = "#{node['drush']['install_dir']}/drush.phar";
+file = "#{node['drush']['install_dir']}/drush.phar"
 remote_file file do
   source node['drush']['phar']['url']
   mode '0755'
