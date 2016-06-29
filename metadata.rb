@@ -12,6 +12,6 @@ depends          'composer'
 recipe           'drush',       'Installs Drush and dependencies.'
 recipe           'drush::git',  'Installs Drush via Git (github.com repository)'
 
-%w( debian ubuntu centos redhat ).each do |os|
+%w(debian ubuntu centos redhat).each do |os|
   supports os
 end
