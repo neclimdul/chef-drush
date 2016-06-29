@@ -21,19 +21,22 @@ include_recipe 'git'
 case node[:platform]
 when 'debian', 'ubuntu', 'centos', 'redhat'
 
+  composer = node['composer']['bin']
+
   # ensure composer is installed before it gets used.
   include_recipe 'composer'
   execute 'drush-composer-install' do
     cwd node['drush']['install_dir']
-    command "#{node['composer']['bin']} install --no-interaction --no-ansi --no-dev"
+    command "#{composer} install --no-interaction --no-ansi --no-dev"
     action :nothing
-    subscribes :run, "git[#{node['drush']['install_dir']}]", :immediately
-    only_if { File.exist?(node['composer']['bin']) && File.exist?(node['drush']['install_dir'] + '/composer.lock') }
+    only_if { File.exist?(composer) && File.exist?(node['drush']['install_dir'] + '/composer.json') }
   end
 
-  git node['drush']['install_dir'] do
+  git 'drush-git' do
+    destination node['drush']['install_dir']
     repository 'https://github.com/drush-ops/drush.git'
     reference node['drush']['version']
+    notifies :run, 'execute[drush-composer-install]', :immediately
     action :sync
   end
 
