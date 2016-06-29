@@ -18,6 +18,8 @@ suites:
   - name: default
     run_list:
       - recipe[drush::default]
+    # These don't have php 5.4 and will fail.
+    excludes: ['ubuntu-12.04', centos-7.2']
     attributes:
   - name: git
     run_list:
